@@ -1,0 +1,430 @@
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!--<link rel = "stylesheet" href = "https://fonts.googleapis/com/icon?family=Material+Icons">-->
+</head>
+
+<div class = "connectBar">
+  <img src = "RaspbianUIBuild/Desktop1.png" width = "25" height = "25" style = "margin-left: 4px; margin-top: 1px;"/>
+  <span class = "name">Internet</span>
+  <button id = "closeButton"><a class = "options" href = "RaspbianUIBuildNavbarTest.html" id = "close"><i class = "material-icons">clear</i></a></button>
+  <button id = "closeButton"><a class = "options" href = "#"><i class = "material-icons" style = "color: white;">crop_din</i></a></button>
+  <button id = "closeButton"><a class = "options" href = "#"><i class = "material-icons" style = "color: white; margin-top: 9px; margin-bottom: -8px;">remove</i></a></button>
+</div>
+
+<div class = "tabNav">
+<div class = "tabs">
+  <ul id = "tabBar">
+    <!--<ul class = "tabList">-->
+  <span id = "tabList">
+    <button id = "using" class = "tab"><span class = "tabText" style = "">New Tab</span></button>
+    <button id = "other" class = "tab"><span class = "tabText">New Tab</span></button>
+    <button id = "other" class = "tab"><span class = "tabText">New Tab</span></button>
+    <button id = "other" class = "tab"><span class = "tabText">New Tab</span></button>
+    <button id = "other" class = "tab"><span class = "tabText">New Tab</span></button>
+  </span>
+    <span id = "add"><button class = "addTab"></button></span>
+    <!--<button class = "tab"><span class = "tabText">New Tab</span>-->
+</div>
+
+</div>
+
+<div class = "searchBar">
+  <a href = "#" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_back_black_24px.svg"/></a>
+  <a href = "#" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_forward_black_24px.svg"/></a>
+  <a href = "Web_Browser.html" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_refresh_black_24px.svg"/></a>
+  <input id = "search"  style = "width: 1200px; vertical-align: center;" value = " https://www.google.com"/>
+  <a href = "#" id = "rightArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_more_vert_black_24px.svg"/></a>
+</div>
+
+<div class = "page">
+  <div class = "quickAccess">
+    <a id = "GoogleImages" href = "https://www.google.com/imghp?hl=en">Images</a>
+    <a><span class = "appDrop"> <i class = "material-icons" id = "appGrid">apps</i></span></a>
+    <i class = "notifyicon material-icons" id = "bellNotify">notifications</i>
+    <img src = "https://lh3.googleusercontent.com/-StMrQxuDJsg/AAAAAAAAAAI/AAAAAAAAAAA/ACLGyWD1YZL7E-fpVFYm_A38nvTIG9nQ6Q/s32-c-mo/photo.jpg" id = "profilePic" style = "border-radius: 50%;"/>
+  </div>
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png" id = "GoogleLogo" height = "92" width = "272" class = "center"/>
+  <!--<img src = "RaspbianUIBuild/GoogleMicrophone.png" id = "mic" width = "15px" height: "22.5px"/>-->
+  <input type = "text" placeholder = "Search Google or type URL" id = "middleSearch"/>
+  <div class = "middlebuttons">
+  <a id = "searchExec" href = ""><button class = "searchButton" width = "30px" height = "10px" id = "GoogleSearchButton"><strong>Google Search</strong></button></a>
+  <button class = "searchButton" width = "30px" height = "10px" id = "ImFeelingLucky"><strong>I'm Feeling Lucky</strong></button>
+  </div>
+
+</div>
+
+
+<style>
+
+#used{
+  border-bottom: #000;
+  outline: none;
+  position: absolute;
+}
+
+#other{
+  border-bottom: 1px solid #AAA;
+}
+
+#searchExec:visited{
+    background-color: white;
+  /*padding-right: -10px;*/
+}
+
+#closeButton{
+  float: right;
+  background-color: #84ABD6;
+  border: solid;
+  border-color: #6C8DB3;
+  border-width: thin;
+  margin-top: 2px;
+  margin-right: 2px;
+}
+
+.name{
+  font-family: "Arial";
+  margin-top: -10px;
+}
+
+.connectBar{
+  background-color: #84ABD6;
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-top: -8px;
+  height: 30px;
+}
+
+#close{
+  float: right;
+  background-color: none;
+  color: white;
+  border-color: black;
+  border-width: thin;
+}
+
+#close:hover{
+  background-color: none;
+}
+
+#close:visited{
+  text-decoration: none;
+}
+
+.options{
+  float: right;
+  margin-left: -7;
+  margin-right: -7;
+  margin-top: -2;
+  margin-bottom: -2;
+}
+
+#GoogleImages{
+  /*padding-top: -100px;*/
+
+  font-family: "Arial";
+  color: rgba(0,0,0,0.87);
+  font-size: 14px;
+}
+
+a:link{
+  text-decoration: none;
+}
+
+#GoogleImages:visited{
+  background-color: white;
+
+}
+a:hover{
+  /*background-color: none;*/
+  text-decoration: underline;
+}
+
+.tabList{
+  margin-left: -50px;
+  overflow: hidden;
+}
+
+/*#add{
+  margin-left: -200px;
+}*/
+
+
+#appGrid{
+  color: rgba(0,0,0,.55);
+  margin-right: 5px;
+  padding: 5px;
+  margin-top: 15px;
+  height: 30px;
+  width: 30px;
+}
+
+#appGrid:hover{
+  color: #000;
+}
+
+/*.pageSearch{
+  position: relative;
+}
+
+#mic{
+  position: absolute;
+  top: 10px;
+  bottom: 9px;
+  float:right;
+}*/
+
+.searchButton{
+  color: #8A8F8A;
+  background-color: #F2F2F2;
+  border: solid;
+  border-color: #F2F2F2;
+  border-radius: 3px;
+  font-size: 15px;
+  font-family: "Arial", "Sans Serif";
+  margin-top: 25px;
+  margin-right: 5px;
+  height: 40px;
+}
+
+#GoogleSearchButton{
+  width: 138px;
+}
+
+#ImFeelingLucky{
+  width: 146px;
+}
+
+.searchButton:hover{
+  background-color: #F3F3F3;
+  color: #000;
+  border-color: #C6C6C6;
+  border-width: 1px;
+}
+
+.middlebuttons{
+  margin-left: 39.5%;
+}
+.addTab{
+  width: 34px;
+  height: 18px;
+  transform: skew(25deg);
+  color: #D0D0D0;
+  border-width: thin;
+  border-color: #AAA;
+  border-radius: 2px;
+}
+
+#bellNotify{
+  display: inline-table;
+  position: relative;
+  background-color: rgba(0,0,0,.55);
+  background-position: -70px -1171px;
+  background-size: 20px 20px;
+  /*margin-bottom: -5px;*/
+  font-size: 12px;
+  color: white;
+  margin-right: 15px;
+  border-radius: 100px;
+  padding: 5px;
+  top: -6px;
+}
+
+#bellNotify:hover{
+  background-color: #000;
+}
+
+
+.quickAccess{
+  float:right;
+  margin-top: 3px;
+}
+
+#profilePic{
+  margin-top: 15px;
+  margin-right: 14px;
+  float:right;
+}
+
+/*ul{
+  list-style-type: none;
+}*/
+
+#middleSearch:hover{
+  box-shadow: 0 4px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
+
+}
+
+/*#middleLink:visited{
+  background-color: white;
+}
+
+#middleLink:hover{
+  background-color: white;
+}*/
+
+#middleSearch{
+   /*background: url("RaspbianUIBuild/GoogleMicrophone.png");
+   background-size: 15px 22.5px;
+   background-position: right;
+   background-repeat: no-repeat;*/
+   border:none;
+   box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
+   width: 664px;
+   height: 44px;
+   margin-top: 28px;
+   margin-left: 28%;
+   margin-right: 35%;
+   padding-left: 13px;
+   padding-right: 13px;
+   font-size: 16px;
+
+ }
+
+#GoogleLogo{
+  padding-top: 112px;
+  margin-left: 40%;
+  margin-right: 40%;
+
+}
+
+
+.tabText{
+  margin-left: -90px;
+  transform: perspective(-20px) rotateX(-20deg);
+  -webkit-transform: skew(-20deg);
+}
+.tab {
+  width: 205px;
+  height: 30px;
+  background: #F2F2F2;
+  transform: perspective(10px) rotateX(2deg);
+  border-top: 1px solid #AAA;
+  border-bottom: none; /*1px solid #AAA;*/
+  padding-bottom: -10;
+  margin-bottom: -2px;
+  margin-top: -1px;
+  overflow: hidden;
+  border-radius: 2px;
+  border: solid;
+  border-width: 1px;
+  border-color: #AAA;
+  z-index: 2;
+}
+.tabs{
+  margin-left: -20px;
+  margin-bottom: -15px;
+  background-color: #CCC;
+  margin-top: -16px;
+  margin-right: -8px;
+  align: left;
+  border-bottom: 1px solid #AAA;
+}
+
+/*#newTab{
+  font-family: "Roboto";
+  transform: skewX(-10deg);
+  display: block;
+}*/
+
+  a:hover{
+    background-color: #D2D2D3;
+  }
+
+.searchBar input{
+  border-radius: -1px;
+}
+.searchBar{
+  margin: -8px;
+  border-top: 1 px solid #AAA;
+  border-radius: 2px;
+  padding-top: 8px;
+  background-color: #F2F2F2;
+  height: 40;
+}
+
+
+#rightArrows{
+  vertical-align: middle;
+  border-radius: 5px;
+  margin-right: 5px;
+  float: right;
+}
+#leftArrows{
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+#leftArrows:hover{
+  background-color: #D5D5D5;
+  padding-top: 10px;
+}
+
+#search{
+ /*@import url("")*/
+  border-radius: 3px;
+  border: solid;
+  border-color: #C6C6C6;
+  border-width: thin;
+  height: 25px;
+}
+</style>
+
+<script>
+
+
+
+var middleSearch = document.getElementById("middleSearch");
+middleSearch.addEventListener('click', () => {
+  middleSearch.setAttribute("placeholder", "");
+});
+
+document.addEventListener('click', e => {
+  if(!middleSearch.contains(e.target)){
+    middleSearch.setAttribute("placeholder", "Search Google or type URL");
+  }
+});
+
+/*var addTab = document.getElementById("add");
+addTab.addEventListener('click', () => {
+  var tab = document.createElement("button");
+  var tabList = document.getElementById("tabList");
+  tabList.appendChild(tab);
+  };
+});*/
+
+var searchExec = document.getElementById("searchExec");
+searchExec.addEventListener("click", () => {
+  searchExec.setAttribute("href", "https://www.google.com/search?q=" + middleSearch.value);
+});
+
+middleSearch.addEventListener("keydown", e => {
+  if (e.keyCode === 13){
+    //document.getElementById("middleLink").setAttribute("href", "https://www.google.com/search?q=" + middleSearch.value);
+    window.location = `https://www.google.com/search?q=${middleSearch.value}`;
+  }
+});
+
+var search = document.getElementById("search");
+search.addEventListener("keydown", e => {
+  if (e.keycode === 13){
+      window.location = "http://" + middleSearch.value;
+  }
+});
+
+
+</script>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+$(document).ready(() => {
+  /*$('#add').on('click', () => {
+    $('#tabList').append("<button class = 'tab'><span class = 'tabText'>New Tab</span></button>");
+  });*/
+  document.getElementbyId("add").addEventListener("click", () => {
+    $("#tabList").append("<button class = 'tab'><span class = 'tabText'>New Tab</span></button>")
+  });
+});
+
+
+</script>
