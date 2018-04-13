@@ -373,8 +373,12 @@ a:hover{
 
 <script>
 
-
-
+var search = document.getElementBId("search");
+search.addEventListener("keydown", e => {
+  if(e.keyCode === 13){
+    window.location = search.value;
+  }
+});
 var middleSearch = document.getElementById("middleSearch");
 middleSearch.addEventListener('click', () => {
   middleSearch.setAttribute("placeholder", "");
