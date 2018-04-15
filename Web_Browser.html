@@ -407,8 +407,8 @@ a:hover{
 </style>
 
 <script>
-
 var feelingLucky = document.getElementById("ImFeelingLucky");
+feelingLucky.setAttribute("style", "font-weight: bold;");
 feelingLucky.addEventListener("mouseover", () => {
   var feelingOptions = ["Happy", "Awesome", "Kind", "Ingenious"];
   var adjective = feelingOptions[Math.round(Math.random(1,4))/*.Math.round()*/];
