@@ -415,9 +415,9 @@ a:hover{
 
 <script>
   
-var refresh = document.getElementById("refresh");
+var refresh = document.getElementById("reload");
 refresh.addEventListener("click", () => {
-  refresh.setAttribute("href", 
+  refresh.innerHTML = "<i class = 'material-icons'>close</i>";  
 });
 var feelingLucky = document.getElementById("ImFeelingLucky");
 feelingLucky.setAttribute("style", "font-weight: bold;");
