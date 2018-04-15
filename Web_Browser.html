@@ -4,7 +4,7 @@
 </head>
 
 <div class = "connectBar">
-  <img src = "Desktop1.png" width = "25" height = "25" style = "margin-left: 4px; margin-top: 1px;"/>
+  <img src = "RaspbianUIBuild/Desktop1.png" width = "25" height = "25" style = "margin-left: 4px; margin-top: 1px;"/>
   <span class = "name">Internet</span>
   <button id = "closeButton"><a class = "options" href = "RaspbianUIBuildNavbarTest.html" id = "close"><i class = "material-icons">clear</i></a></button>
   <button id = "closeButton"><a class = "options" href = "#"><i class = "material-icons" style = "color: white;">crop_din</i></a></button>
@@ -13,20 +13,30 @@
 
 <div class = "tabNav">
 <div class = "tabs">
-  <ul id = "tabBar">
+  <ul class = "tabBar">
     <!--<ul class = "tabList">-->
-  <span id = "tabList">
-    <button id = "using" class = "tab"><span class = "tabText" style = "">New Tab</span></button>
-    <button id = "other" class = "tab"><span class = "tabText">New Tab</span></button>
-    <button id = "other" class = "tab"><span class = "tabText">New Tab</span></button>
-    <button id = "other" class = "tab"><span class = "tabText">New Tab</span></button>
-    <button id = "other" class = "tab"><span class = "tabText">New Tab</span></button>
-  </span>
-    <span id = "add"><button class = "addTab"></button></span>
+  <!--<span id = "tabList">-->
+    <li class = "theTabs"><button id = "using" class = "tab"><span class = "tabText" style = "">New Tab <a class = "closeTab"><i class = "material-icons">close</i></a></span></button></li>
+    <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
+    <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
+    <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
+    <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
+    <button style = "display: inline" id = "addTab" class = "addTab"></button>
+  </ul>
+
+
+
+  <!--</span>-->
+
+<!--<li class = "theTabs"></li>-->
+
+    <!--<a id = "adding"><span id = "add">--><!--</span></a>-->
     <!--<button class = "tab"><span class = "tabText">New Tab</span>-->
 </div>
 
 </div>
+
+<!--<iframe id = "iframe" src = "sites.google.com"></iframe>-->
 
 <div class = "searchBar">
   <a href = "#" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_back_black_24px.svg"/></a>
@@ -56,10 +66,28 @@
 
 <style>
 
+#adding{
+  display: inline-flex;
+}
+
+.theTabs{
+  display: inline;
+}
+
+.closeTab{
+  height: 5px;
+  width: 5px;
+  float: right;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+
 #used{
-  border-bottom: #000;
+  border-bottom: none;
   outline: none;
   position: absolute;
+  /*z-index: -1;*/
 }
 
 #other{
@@ -214,6 +242,10 @@ a:hover{
   border-radius: 2px;
 }
 
+#addTab:hover{
+  color: #F2F2F2
+}
+
 #bellNotify{
   display: inline-table;
   position: relative;
@@ -308,7 +340,7 @@ a:hover{
   border: solid;
   border-width: 1px;
   border-color: #AAA;
-  z-index: 2;
+  z-index: 3;
 }
 .tabs{
   margin-left: -20px;
@@ -318,6 +350,7 @@ a:hover{
   margin-right: -8px;
   align: left;
   border-bottom: 1px solid #AAA;
+  /*display: flex;*/
 }
 
 /*#newTab{
@@ -335,11 +368,13 @@ a:hover{
 }
 .searchBar{
   margin: -8px;
-  border-top: 1 px solid #AAA;
+  /*border: 1px solid #AAA;*/
+  border-top: 1px solid #AAA;
   border-radius: 2px;
   padding-top: 8px;
   background-color: #F2F2F2;
   height: 40;
+  /*margin-right: 100px;*/
 }
 
 
@@ -373,12 +408,23 @@ a:hover{
 
 <script>
 
-/*var search = document.getElementBId("search");
-search.addEventListener("keydown", e => {
-  if(e.keyCode === 13){
-    window.location = search.value;
+var feelingLucky = document.getElementById("ImFeelingLucky");
+feelingLucky.addEventListener("mouseover", () => {
+  var feelingOptions = ["Happy", "Awesome", "Kind", "Ingenious"];
+  var adjective = feelingOptions[Math.round(Math.random(1,4))/*.Math.round()*/];
+  let myFeeling = "I'm Feeling " + adjective;
+
+  feelingLucky.innerHTML = myFeeling;//${feelingOptions[Math.random(0,3).floor()]};
+  feelingLucky.setAttribute("style", "display: inline; font-weight: bold;");
+
+});
+
+document.addEventListener("mouseover", e => {
+  if(!feelingLucky.contains(e.target)){
+    feelingLucky.innerHTML = "I'm Feeling Lucky";
   }
-});*/
+})
+
 var middleSearch = document.getElementById("middleSearch");
 middleSearch.addEventListener('click', () => {
   middleSearch.setAttribute("placeholder", "");
@@ -425,10 +471,10 @@ $(document).ready(() => {
   /*$('#add').on('click', () => {
     $('#tabList').append("<button class = 'tab'><span class = 'tabText'>New Tab</span></button>");
   });*/
-  document.getElementbyId("add").addEventListener("click", () => {
-    $("#tabList").append("<button class = 'tab'><span class = 'tabText'>New Tab</span></button>")
+  $("#addTab").on("click", () => {
+    $("#tabList").append("<li class = 'theTabs'><button id = 'other' class = 'tab'><span class = 'tabText'>New Tab</span></button></li>")
   });
 });
 
-
 </script>
+
