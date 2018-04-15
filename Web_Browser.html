@@ -41,7 +41,7 @@
 <div class = "searchBar">
   <a href = "#" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_back_black_24px.svg"/></a>
   <a href = "#" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_forward_black_24px.svg"/></a>
-  <a href = "Web_Browser.html" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_refresh_black_24px.svg"/></a>
+  <a href = "Web_Browser.html" id = "reload"><img id = "refresh" src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_refresh_black_24px.svg"/></a>
   <input id = "search"  style = "width: 1200px; vertical-align: center;" value = " https://www.google.com"/>
   <a href = "#" id = "rightArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_more_vert_black_24px.svg"/></a>
 </div>
@@ -390,6 +390,13 @@ a:hover{
   margin-left: 10px;
   vertical-align: middle;
 }
+  
+#reload{
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
 
 #leftArrows:hover{
   background-color: #D5D5D5;
@@ -407,6 +414,11 @@ a:hover{
 </style>
 
 <script>
+  
+var refresh = document.getElementById("refresh");
+refresh.addEventListener("click", () => {
+  refresh.setAttribute("href", 
+});
 var feelingLucky = document.getElementById("ImFeelingLucky");
 feelingLucky.setAttribute("style", "font-weight: bold;");
 feelingLucky.addEventListener("mouseover", () => {
