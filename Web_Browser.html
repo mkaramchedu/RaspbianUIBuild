@@ -1,17 +1,18 @@
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!--<link rel = "stylesheet" href = "https://fonts.googleapis/com/icon?family=Material+Icons">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <div class = "connectBar">
-  <img src = "Desktop1.png" width = "25" height = "25" style = "margin-left: 4px; margin-top: 1px;"/>
+  <img src = "RaspbianUIBuild/Desktop1.png" width = "25" height = "25" style = "margin-left: 4px; margin-top: 1px;"/>
   <span class = "name">Internet</span>
   <button id = "closeButton"><a class = "options" href = "RaspbianUIBuildNavbarTest.html" id = "close"><i class = "material-icons">clear</i></a></button>
   <button id = "closeButton"><a class = "options" href = "#"><i class = "material-icons" style = "color: white;">crop_din</i></a></button>
   <button id = "closeButton"><a class = "options" href = "#"><i class = "material-icons" style = "color: white; margin-top: 9px; margin-bottom: -8px;">remove</i></a></button>
 </div>
 
-<div class = "tabNav">
+<!--<div class = "tabNav">-->
 <div class = "tabs">
   <ul class = "tabBar">
     <!--<ul class = "tabList">-->
@@ -21,9 +22,12 @@
     <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
     <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
     <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
-    <button style = "display: inline" id = "addTab" class = "addTab"></button>
+    <button style = "display: inline-flex" id = "addTab" class = "addTab"></button>
+
   </ul>
-  
+
+
+
 
 
 
@@ -35,14 +39,14 @@
     <!--<button class = "tab"><span class = "tabText">New Tab</span>-->
 </div>
 
-</div>
+<!--</div>-->
 
 <!--<iframe id = "iframe" src = "sites.google.com"></iframe>-->
 
 <div class = "searchBar">
-  <a href = "#" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_back_black_24px.svg"/></a>
-  <a href = "#" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_forward_black_24px.svg"/></a>
-  <a href = "Web_Browser.html" id = "reload"><img id = "refresh" src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_refresh_black_24px.svg"/></a>
+  <a href = "javascript:history.go(-1)" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_back_black_24px.svg"/></a>
+  <a href = "javascript:history.go(1)" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_forward_black_24px.svg"/></a>
+  <a href = "Web_Browser.html" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_refresh_black_24px.svg"/></a>
   <input id = "search"  style = "width: 1200px; vertical-align: center;" value = " https://www.google.com"/>
   <a href = "#" id = "rightArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_more_vert_black_24px.svg"/></a>
 </div>
@@ -59,22 +63,22 @@
   <input type = "text" placeholder = "Search Google or type URL" id = "middleSearch"/>
   <div class = "middlebuttons">
   <a id = "searchExec" href = ""><button class = "searchButton" width = "30px" height = "10px" id = "GoogleSearchButton"><strong>Google Search</strong></button></a>
-  <button id = "ImFeelingLucky" class = "searchButton"><strong>I'm Feeling Lucky</strong></button>
+  <button class = "searchButton" width = "30px" height = "10px" id = "ImFeelingLucky"><strong>I'm Feeling Lucky</strong></button>
   </div>
 
 </div>
 
 
-<style>
 
+
+<style>
 #adding{
   display: inline-flex;
 }
-
 .theTabs{
   display: inline;
+  /*border-radius: 3px*/
 }
-
 .closeTab{
   height: 5px;
   width: 5px;
@@ -82,24 +86,19 @@
   margin-right: 20px;
   border-radius: 50%;
 }
-
-
 #used{
   border-bottom: none;
   outline: none;
   position: absolute;
   /*z-index: -1;*/
 }
-
 #other{
   border-bottom: 1px solid #AAA;
 }
-
 #searchExec:visited{
     background-color: white;
   /*padding-right: -10px;*/
 }
-
 #closeButton{
   float: right;
   background-color: #84ABD6;
@@ -109,12 +108,10 @@
   margin-top: 2px;
   margin-right: 2px;
 }
-
 .name{
   font-family: "Arial";
   margin-top: -10px;
 }
-
 .connectBar{
   background-color: #84ABD6;
   margin-left: -8px;
@@ -122,7 +119,6 @@
   margin-top: -8px;
   height: 30px;
 }
-
 #close{
   float: right;
   background-color: none;
@@ -130,15 +126,12 @@
   border-color: black;
   border-width: thin;
 }
-
 #close:hover{
   background-color: none;
 }
-
 #close:visited{
   text-decoration: none;
 }
-
 .options{
   float: right;
   margin-left: -7;
@@ -146,38 +139,29 @@
   margin-top: -2;
   margin-bottom: -2;
 }
-
 #GoogleImages{
   /*padding-top: -100px;*/
-
   font-family: "Arial";
   color: rgba(0,0,0,0.87);
   font-size: 14px;
 }
-
 a:link{
   text-decoration: none;
 }
-
 #GoogleImages:visited{
   background-color: white;
-
 }
 a:hover{
   /*background-color: none;*/
   text-decoration: underline;
 }
-
 .tabList{
   margin-left: -50px;
   overflow: hidden;
 }
-
 /*#add{
   margin-left: -200px;
 }*/
-
-
 #appGrid{
   color: rgba(0,0,0,.55);
   margin-right: 5px;
@@ -186,22 +170,18 @@ a:hover{
   height: 30px;
   width: 30px;
 }
-
 #appGrid:hover{
   color: #000;
 }
-
 /*.pageSearch{
   position: relative;
 }
-
 #mic{
   position: absolute;
   top: 10px;
   bottom: 9px;
   float:right;
 }*/
-
 .searchButton{
   color: #8A8F8A;
   background-color: #F2F2F2;
@@ -214,25 +194,21 @@ a:hover{
   margin-right: 5px;
   height: 40px;
 }
-
 #GoogleSearchButton{
   width: 138px;
 }
-
 #ImFeelingLucky{
   width: 146px;
   white-space: nowrap;
   display: inline-block;
   max-width: 130%;
 }
-
 .searchButton:hover{
   background-color: #F3F3F3;
   color: #000;
   border-color: #C6C6C6;
   border-width: 1px;
 }
-
 .middlebuttons{
   margin-left: 39.5%;
 }
@@ -245,11 +221,9 @@ a:hover{
   border-color: #AAA;
   border-radius: 2px;
 }
-
 #addTab:hover{
   color: #F2F2F2
 }
-
 #bellNotify{
   display: inline-table;
   position: relative;
@@ -264,40 +238,33 @@ a:hover{
   padding: 5px;
   top: -6px;
 }
-
 #bellNotify:hover{
   background-color: #000;
 }
-
-
 .quickAccess{
   float:right;
   margin-top: 3px;
 }
-
 #profilePic{
   margin-top: 15px;
   margin-right: 14px;
   float:right;
 }
-
+.tabBar{
+  float: inline-block;
+}
 /*ul{
   list-style-type: none;
 }*/
-
 #middleSearch:hover{
   box-shadow: 0 4px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
-
 }
-
 /*#middleLink:visited{
   background-color: white;
 }
-
 #middleLink:hover{
   background-color: white;
 }*/
-
 #middleSearch{
    /*background: url("RaspbianUIBuild/GoogleMicrophone.png");
    background-size: 15px 22.5px;
@@ -313,17 +280,12 @@ a:hover{
    padding-left: 13px;
    padding-right: 13px;
    font-size: 16px;
-
  }
-
 #GoogleLogo{
   padding-top: 112px;
   margin-left: 40%;
   margin-right: 40%;
-
 }
-
-
 .tabText{
   margin-left: -90px;
   transform: perspective(-20px) rotateX(-20deg);
@@ -346,7 +308,14 @@ a:hover{
   border-color: #AAA;
   z-index: 3;
 }
+/*.tabs li:nth-child(4){z-index:-2};*/
+/*.tabs li:*/
+.theTabs li:nth-child(1){
+  z-index: -5! important;
+}
 .tabs{
+  /**/
+  /*display: flex;*/
   margin-left: -20px;
   margin-bottom: -15px;
   background-color: #CCC;
@@ -354,19 +323,15 @@ a:hover{
   margin-right: -8px;
   align: left;
   border-bottom: 1px solid #AAA;
-  /*display: flex;*/
 }
-
 /*#newTab{
   font-family: "Roboto";
   transform: skewX(-10deg);
   display: block;
 }*/
-
   a:hover{
     background-color: #D2D2D3;
   }
-
 .searchBar input{
   border-radius: -1px;
 }
@@ -380,8 +345,6 @@ a:hover{
   height: 40;
   /*margin-right: 100px;*/
 }
-
-
 #rightArrows{
   vertical-align: middle;
   border-radius: 5px;
@@ -394,24 +357,22 @@ a:hover{
   margin-left: 10px;
   vertical-align: middle;
 }
-  
+
 #reload{
   border-radius: 5px;
   margin-right: 5px;
   margin-left: 10px;
   vertical-align: middle;
 }
-
 #leftArrows:hover{
   background-color: #D5D5D5;
   padding-top: 10px;
 }
-  
+
   #reload:hover{
     background-color: #D5D5D5;
     padding-top: 10px;
   }
-
 #search{
  /*@import url("")*/
   border-radius: 3px;
@@ -423,10 +384,22 @@ a:hover{
 </style>
 
 <script>
-  
+
+/*if($("tabBar").size() > 7){
+  $("theTabs").width = (window.innerWidth - 20)/$("tabBar").size();
+}*/
+
+//document.getELementById("using").zIndex = 5;
+
+$(".addTab").on("click", () => {
+  //document.write("HI!");
+    $(".tabBar").prepend("<li class = 'theTabs'><button id = 'other' class = 'tab'><span class = 'tabText'>New Tab</span></button></li>");
+});
+
+
 /*var refresh = document.getElementById("reload");
 refresh.addEventListener("click", () => {
-  refresh.innerHTML = "<i class = 'material-icons'>close</i>";  
+  refresh.innerHTML = "<i class = 'material-icons'>close</i>";
 });*/
 var feelingLucky = document.getElementById("ImFeelingLucky");
 feelingLucky.setAttribute("style", "font-weight: bold;");
@@ -434,29 +407,23 @@ feelingLucky.addEventListener("mouseover", () => {
   var feelingOptions = ["Happy", "Awesome", "Kind", "Ingenious"];
   var adjective = feelingOptions[Math.round(Math.random(1,4))/*.Math.round()*/];
   let myFeeling = "I'm Feeling " + adjective;
-
   feelingLucky.innerHTML = myFeeling;//${feelingOptions[Math.random(0,3).floor()]};
   feelingLucky.setAttribute("style", "display: inline; font-weight: bold;");
-
 });
-
 document.addEventListener("mouseover", e => {
   if(!feelingLucky.contains(e.target)){
     feelingLucky.innerHTML = "I'm Feeling Lucky";
   }
 })
-
 var middleSearch = document.getElementById("middleSearch");
 middleSearch.addEventListener('click', () => {
   middleSearch.setAttribute("placeholder", "");
 });
-
 document.addEventListener('click', e => {
   if(!middleSearch.contains(e.target)){
     middleSearch.setAttribute("placeholder", "Search Google or type URL");
   }
 });
-
 /*var addTab = document.getElementById("add");
 addTab.addEventListener('click', () => {
   var tab = document.createElement("button");
@@ -464,19 +431,16 @@ addTab.addEventListener('click', () => {
   tabList.appendChild(tab);
   };
 });*/
-
 var searchExec = document.getElementById("searchExec");
 searchExec.addEventListener("click", () => {
   searchExec.setAttribute("href", "https://www.google.com/search?q=" + middleSearch.value);
 });
-
 middleSearch.addEventListener("keydown", e => {
   if (e.keyCode === 13){
     //document.getElementById("middleLink").setAttribute("href", "https://www.google.com/search?q=" + middleSearch.value);
     window.location = `https://www.google.com/search?q=${middleSearch.value}`;
   }
 });
-
 var search = document.getElementById("search");
 search.addEventListener("keydown", e => {
   if (e.keycode === 13){
@@ -492,10 +456,8 @@ $(document).ready(() => {
   /*$('#add').on('click', () => {
     $('#tabList').append("<button class = 'tab'><span class = 'tabText'>New Tab</span></button>");
   });*/
-  $("#addTab").on("click", () => {
-    $("#tabList").append("<li class = 'theTabs'><button id = 'other' class = 'tab'><span class = 'tabText'>New Tab</span></button></li>")
-  });
-});
+
+
+
 
 </script>
-
