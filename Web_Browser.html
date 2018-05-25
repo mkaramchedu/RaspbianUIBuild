@@ -2,10 +2,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!--<link rel = "stylesheet" href = "https://fonts.googleapis/com/icon?family=Material+Icons">-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-<div class = "connectBar">
-  <img src = "Desktop1.png" width = "25" height = "25" style = "margin-left: 4px; margin-top: 1px;"/>
+<div class = "connectBar" style= "width: 100%; margin-left: 0px;">
+  <img src = "RaspbianUIBuild/Desktop1.png" width = "25" height = "25" style = "margin-left: 10px; margin-top: 1px;"/>
   <span class = "name">Internet</span>
   <button id = "closeButton"><a class = "options" href = "RaspbianUIBuildNavbarTest.html" id = "close"><i class = "material-icons">clear</i></a></button>
   <button id = "closeButton"><a class = "options" href = "#"><i class = "material-icons" style = "color: white;">crop_din</i></a></button>
@@ -17,11 +20,11 @@
   <ul class = "tabBar">
     <!--<ul class = "tabList">-->
   <!--<span id = "tabList">-->
-    <li class = "theTabs"><button id = "using" class = "tab"><span class = "tabText" style = "">New Tab <a class = "closeTab"><i class = "material-icons">close</i></a></span></button></li>
+    <li class = "theTabs"><button id = "using" class = "tab"><span class = "tabText" style = "">New Tab</span><a class = "closeTab"><i class = "material-icons">close</i></a></span></button></li>
     <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
     <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
     <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
-    <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
+    <li class = "theTabs"><button id = "other" class = "tab"><span class = "new">New Tab</span></button></li>
     <button style = "display: inline-flex" id = "addTab" class = "addTab"></button>
 
   </ul>
@@ -46,12 +49,24 @@
 <div class = "searchBar">
   <a href = "javascript:history.go(-1)" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_back_black_24px.svg"/></a>
   <a href = "javascript:history.go(1)" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_forward_black_24px.svg"/></a>
-  <a href = "Web_Browser.html" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_refresh_black_24px.svg"/></a>
-  <input id = "search"  style = "width: 1200px; vertical-align: center;" value = " https://www.google.com"/>
+  <a href = "javascript:location.reload()" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_refresh_black_24px.svg"/></a>
+  <input id = "search"  style = "width: 1200px; vertical-align: center;" value = "https://www.google.com"/>
   <a href = "#" id = "rightArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_more_vert_black_24px.svg"/></a>
 </div>
+<div class = "bookmarks">
+  <ul>
+    <!--<li><button class="mdl-button mdl-js-button mdl-button-n-raised mdl-js-ripple-effect mdl-button--accent">Hey</button></li>-->
+    <button id = "Apps" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px; width: 20px;" src = "Apps_Icon"/> Apps</button>
+    <button id = "BRCMVideo" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 15px; padding-left: 0px;" src = "Youtube_Logo1.png"/> YouTube - Broadcom MASTERS 2017 Highlights</button>
+    <button id = "FuturismBookmark" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px" src = "Futurism_Logo.jpg"/> Futurism</button>
+    <button id = "CNNTech" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px;" src = "CNN_Logo.png"/> Tech News - CNN Tech</button>
+    <button id = "AlanTuringWikipedia" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px;" src = "favicon.ico"/> Alan Turing - Wikipedia</button>
+    <button id = "CodeFights" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px;" src = "codefights.svg"/> Practice Programming and Find Tech Jobs - CodeFights</button>
+    <button id = "xkcdLink" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px;" src = "XKCD.png"/> Xkcd</button>
+  </ul>
+</div>
 
-<div class = "page">
+<div class = "page" id = "webpage">
   <div class = "quickAccess">
     <a id = "GoogleImages" href = "https://www.google.com/imghp?hl=en">Images</a>
     <a><span class = "appDrop"> <i class = "material-icons" id = "appGrid">apps</i></span></a>
@@ -63,7 +78,36 @@
   <input type = "text" placeholder = "Search Google or type URL" id = "middleSearch"/>
   <div class = "middlebuttons">
   <a id = "searchExec" href = ""><button class = "searchButton" width = "30px" height = "10px" id = "GoogleSearchButton"><strong>Google Search</strong></button></a>
-  <button class = "searchButton" width = "30px" height = "10px" id = "ImFeelingLucky"><strong>I'm Feeling Lucky</strong></button>
+  <button class = "searchButton" width = "30px" height = "10px" id = "ImFeelingLucky">
+    <!--Still working on this portion.-->
+    <ul id = "Options"><strong>
+      <li>I'm Feeling Stellar</li>
+      <li>I'm Feeling Artistic</li>
+      <li>I'm Feeling Wonderful</li>
+      <li>I'm Feeling Curious</li>
+      <li>I'm Feeling Hungry</li>
+      <li>I'm Feeling Lucky</li>
+      <li>I'm Feeling Doodley</li>
+      <li>I'm Feeling Generous</li>
+      <li>I'm Feeling Trendy</li>
+      <li>I'm Feeling Puzzled</li>
+      <li>I'm Feeling Playful</li>
+      <!--<li>I'm Feeling Lucky</li>
+      <li>I'm Feeling Rapturous</li>
+      <li>I'm Feeling Fascinated</li>
+      <li>I'm Feeling Spectacular</li>
+      <li>I'm Feeling Smart</li>
+      <li>I'm Feeling Intelligent</li>
+      <li>I'm Feeling Nice</li>
+      <li>I'm Feeling Content</li>
+      <li>I'm Feeling Lucky</li>
+      <li>I'm Feeling Doodley</li>
+      <li>I'm Feeling Generous</li>-->
+      <!--<li>I'm Feeling Trendy</li>-->
+  <!--<li>I'm Feeling Puzzled</li>
+  <li>I'm Feeling Playful</li>-->
+</strong></ul>
+</button>
   </div>
 
 </div>
@@ -72,12 +116,69 @@
 
 
 <style>
+.page{
+  margin-top: -15px;
+}
+
+.bookmark{
+  width: auto;
+  margin-top: -10px;
+  background-color: #F2F2F2;
+  color: black;
+  font-size: 10px;
+  border-radius: 3px;
+  padding-bottom: 30px;
+  margin-top: -6px;
+  margin-bottom: 5px;
+  position: relative;
+  height: 38px;
+  text-align: left;
+  text-transform: none;
+}
+
+.bookmark:hover{
+  background-color: #BDBDBD;
+}
+
+.bookmarks{
+  /*margin-left: 20px;*/
+  background-color: #F2F2F2;
+  padding-left: 10px;
+  margin-top: -20px
+
+}
+
+.bookmarks button{
+  height: 20;
+}
+
+.ripply.mdl-js-ripple-effect{
+  position: relative;
+}
+
+.bookmarks ul li{
+  display:inline;
+  list-style-type: none;
+}
+
+body{
+  box-sizing: border-box;
+}
+
+.new{
+  text-indent: 7.5em;
+}
+
+.new{
+  margin-left: -100px;
+}
 #adding{
   display: inline-flex;
 }
 .theTabs{
   display: inline;
   /*border-radius: 3px*/
+
 }
 .closeTab{
   height: 5px;
@@ -107,16 +208,18 @@
   border-width: thin;
   margin-top: 2px;
   margin-right: 2px;
+  padding-right: -5px;
 }
 .name{
   font-family: "Arial";
   margin-top: -10px;
+  margin-left: 10px;
 }
 .connectBar{
   background-color: #84ABD6;
   margin-left: -8px;
   margin-right: -8px;
-  margin-top: -8px;
+  margin-top: 0px;
   height: 30px;
 }
 #close{
@@ -198,10 +301,36 @@ a:hover{
   width: 138px;
 }
 #ImFeelingLucky{
+  margin: 30px auto;
   width: 146px;
   white-space: nowrap;
   display: inline-block;
   max-width: 130%;
+  overflow: hidden;
+  position: relative;
+  /*padding: 0 15px;*/
+
+}
+
+/*#ImFeelingLucky ul{
+  padding-left: 0px;
+  list-style-type: none;
+}*/
+
+#Options{
+  /*list-style-type: none;*/
+  position: absolute;
+  bottom: -116px;
+  padding-left: 0px;
+}
+#Options li{
+  list-style-type: none;
+  text-align: left;
+  padding: 5px 0;
+  /*margin-top: 7px;*/
+  padding-bottom: -7.8px;
+  margin-top: 9px;
+  margin-bottom: 9px;
 }
 .searchButton:hover{
   background-color: #F3F3F3;
@@ -259,6 +388,10 @@ a:hover{
 #middleSearch:hover{
   box-shadow: 0 4px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
 }
+
+#middleSearch:focus{
+  outline: none;
+}
 /*#middleLink:visited{
   background-color: white;
 }
@@ -287,9 +420,9 @@ a:hover{
   margin-right: 40%;
 }
 .tabText{
-  margin-left: -90px;
-  transform: perspective(-20px) rotateX(-20deg);
-  -webkit-transform: skew(-20deg);
+  margin-left: -70px;
+  transform: perspective(-100px);
+  /*-webkit-transform: skew(-20deg);*/
 }
 .tab {
   width: 205px;
@@ -316,13 +449,14 @@ a:hover{
 .tabs{
   /**/
   /*display: flex;*/
-  margin-left: -20px;
+  margin-left: 0px;
   margin-bottom: -15px;
   background-color: #CCC;
   margin-top: -16px;
   margin-right: -8px;
   align: left;
   border-bottom: 1px solid #AAA;
+  width: 100%;
 }
 /*#newTab{
   font-family: "Roboto";
@@ -343,6 +477,9 @@ a:hover{
   padding-top: 8px;
   background-color: #F2F2F2;
   height: 40;
+  width: 100%;
+  margin-left: 0px;
+  margin-top: 2px;
   /*margin-right: 100px;*/
 }
 #rightArrows{
@@ -356,6 +493,10 @@ a:hover{
   margin-right: 5px;
   margin-left: 10px;
   vertical-align: middle;
+}
+
+#leftArrows.nth-child(0){
+  margin-left: 20px;
 }
 
 #reload{
@@ -380,11 +521,52 @@ a:hover{
   border-color: #C6C6C6;
   border-width: thin;
   height: 25px;
+  padding-left: 4px;
 }
 </style>
 
 <script>
 
+/*if($("tabBar").size() > 7){
+  $("theTabs").width = (window.innerWidth - 20)/$("tabBar").size();
+}*/
+
+//document.getELementById("using").zIndex = 5;
+
+var searchBar = document.getElementById("search");
+searchBar.addEventListener("keydown", e => {
+  if(e.keyCode === 13){
+  if(searchBar.value !== "https://www.google.com"){
+    webpage.innerHTML = '<iframe src=' + searchBar.value + ' width="1585" height="645"></iframe>';
+  }
+  }
+});
+
+var webpage = document.getElementById("webpage");
+document.getElementById('BRCMVideo').addEventListener("click", () => {
+  webpage.innerHTML = '<iframe id = width="1585" height="588" src="https://www.youtube.com/embed/NkFwi4afwQE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><h4 font-family = "Courier">Created by Mithra Karamchedu (by that, I mean the simulation)</h1>';
+});
+
+document.getElementById("FuturismBookmark").addEventListener("click", () => {
+  webpage.innerHTML = '<iframe width="1585" height = "645" src="https://futurism.com/"></iframe>';
+  searchBar.value = "https://www.futurism.com";
+});
+
+document.getElementById("AlanTuringWikipedia").addEventListener("click", () => {
+  webpage.innerHTML = '<iframe width="1585" height = "645" src="https://en.wikipedia.org/wiki/Alan_Turing"></iframe>';
+  searchBar.value = "https://en.wikipedia.org/wiki/Alan_Turing";
+});
+
+document.getElementById("CodeFights").addEventListener("click", () => {
+  webpage.innerHTML = '<iframe width="1585" height = "645" src="https://codefights.com/"></iframe>';
+  searchBar.value = "https://www.codefights.com";
+});
+
+document.getElementById("xkcdLink").addEventListener("click", () => {
+  webpage.innerHTML = '<iframe width="1585" height="645" src="https://xkcd.com"></iframe>';
+  searchBar.value = "https://www.xkcd.com";
+});
+//document.getElementById("theTabs").innerHTML = "New Tab";
 /*if($("tabBar").size() > 7){
   $("theTabs").width = (window.innerWidth - 20)/$("tabBar").size();
 }*/
@@ -397,24 +579,26 @@ $(".addTab").on("click", () => {
 });
 
 
+
+
 /*var refresh = document.getElementById("reload");
 refresh.addEventListener("click", () => {
   refresh.innerHTML = "<i class = 'material-icons'>close</i>";
 });*/
-var feelingLucky = document.getElementById("ImFeelingLucky");
+/*var feelingLucky = document.getElementById("ImFeelingLucky");
 feelingLucky.setAttribute("style", "font-weight: bold;");
 feelingLucky.addEventListener("mouseover", () => {
   var feelingOptions = ["Happy", "Awesome", "Kind", "Ingenious"];
-  var adjective = feelingOptions[Math.round(Math.random(1,4))/*.Math.round()*/];
+  var adjective = feelingOptions[Math.round(Math.random(1,4))/*.Math.round()];
   let myFeeling = "I'm Feeling " + adjective;
   feelingLucky.innerHTML = myFeeling;//${feelingOptions[Math.random(0,3).floor()]};
   feelingLucky.setAttribute("style", "display: inline; font-weight: bold;");
-});
-document.addEventListener("mouseover", e => {
+});*/
+/*document.addEventListener("mouseover", e => {
   if(!feelingLucky.contains(e.target)){
     feelingLucky.innerHTML = "I'm Feeling Lucky";
   }
-})
+})*/
 var middleSearch = document.getElementById("middleSearch");
 middleSearch.addEventListener('click', () => {
   middleSearch.setAttribute("placeholder", "");
@@ -437,8 +621,10 @@ searchExec.addEventListener("click", () => {
 });
 middleSearch.addEventListener("keydown", e => {
   if (e.keyCode === 13){
+    var searchQuery = "https://www.google.com/search?q=" + middleSearch.value;
     //document.getElementById("middleLink").setAttribute("href", "https://www.google.com/search?q=" + middleSearch.value);
     window.location = `https://www.google.com/search?q=${middleSearch.value}`;
+    //webpage.innerHTML = '<iframe src = ' + searchQuery + '></iframe>';
   }
 });
 var search = document.getElementById("search");
