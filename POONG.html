@@ -1,0 +1,80 @@
+<html>
+<head>
+  <script src = "RaspbianUIBuild/dragiframe.js"></script>
+</head>
+<body onload = "addHandle(document.getElementsById('POONGHold'), window)">
+  <div style = "height: 30px; background-color: #84ABD6; width: 400px;" id = "POONGHold"><img width = "20px" src = "RaspbianUIBuild/POONG_Icon(2).png"/> POONG</div>
+  <canvas id = "POONG!"></canvas>
+</body>
+
+<script src = "https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+<script>
+  var game = function(processingInstance){
+    with(processingInstance){
+      size(400,400);
+      frameRate(40);
+
+      /*WELCOME TO POONG! It's basically PONG, just impossible! Unfortunately, there's no possible way for anyone to win, because you never know when the ball is going to pass through the paddle (using magic or something like that), and the opponent simply cannot miss. Here's some things you'd like to know:
+     1.  After your score reaches 3, the ball starts flashing random (but not really random) colors.
+     2. After your score reaches 12, the background starts flashing random colors.
+     3. After your score reaches 26, everything becomes more red.*/
+var x = 200;
+var y = 200;
+var dir = 2;
+var score = 0;
+fill(255, 255, 255);
+background(0, 0, 0);
+draw = function() {
+    background(0, 0, 0);
+    if (score < 3){
+    fill(255, 255, 255);
+    } else {
+        fill(random(0, 255), mouseX, mouseY^mouseX);
+    }
+    if (score > 11){
+        background(random(0, 255), random(0, 255), 3.1415926535897932384626433832795028841);
+    }
+    if (score > 25){
+        fill(255, 255, 255);
+    }
+    var bob = ellipse(x, y, 36, 36);
+    x += dir;
+
+    //Evil section
+    if (random(0,4) <= 2){
+        y -= 2;
+    } else if (random(0,4) >= 2){
+        y += 2;
+    }
+    if (x === 360){
+        dir = -dir;
+        y = random(20, 380);
+    } else if (x === 50 && y >= mouseY-104 && y <= mouseY+92){
+        score += 1;
+        dir = 2;
+    }
+    if (x === 0) {
+        draw = function() {
+            fill(255, 0, 0);
+            textSize(35);
+            text ("Game Over", 110, 200);
+
+        };
+    }
+    fill(mouseX, mouseY, mouseX*mouseY);
+    rect(20, 0.5*mouseY , 18, 148);
+    rect(380, y, 18, 148);
+    textSize(65);
+    text("POONG", 82, 85);
+    textSize(35);
+    text("Score: " + score, 132, 130);
+    textSize(10);
+    text("It's impossible. Sorry :(.", 140, 380);
+
+};
+    }
+  };
+
+  var Poong = document.getElementById("POONG!");
+  var processingInstance = new Processing(Poong, game);
+</script>
