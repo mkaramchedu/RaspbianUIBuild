@@ -1,7 +1,11 @@
-<body></body>
+<head>
+  <link href = "https://fonts.googleapis.com/css?family=Roboto:100" rel = "stylesheet">
+  <script type="text/javascript" src="dragiframe.js"></script>
+</head>
+<body>
 <div class = "navbar">
   <div class="dropdown">
-    <button id = "button1" class = "dropbtn" onclick = "myFunction()">
+    <button style = "font-family: 'Roboto'; font-weight: 200;"id = "button1" class = "dropbtn" onclick = "myFunction()">
       <img src = "RaspberryPiLogo.png" alt= "Menu" width= "36" height = "30"/>Menu
     </button>
      <div class="dropdown-content" id="myDropdown">
@@ -9,33 +13,37 @@
        <a href="#"><img src = "Globe-icon.png" height = "20" width = "20"/> Internet  〉</a>
        <a href="#"><img src = "Joystick.svg" height = "20" width = "20"/> Games  〉</a>
        <a href="#"><img src = "Scissors.png" height = "20" width = "20"/> Accessories  〉</a>
-       <li class = "break"></li>
+       <li class = "slicer"></li>
        <a href="#"><img src = "Lifesaver.png" height = "20" width = "20"/> Help  〉</a>
      </div>
    </div>
-    <a href = "Web_Browser.html"><button class = "button2"><img src = "ios7-globe-icon.png" alt= "Internet" width= "32" height = "32"/></button></a>
+    <a href = "Web_Browser.html"><button class = "button2"><img src = "RaspbianUIBuild/ios7-globe-icon.png" alt= "Internet" width= "32" height = "32"/></button></a>
     <button class = "button2"><img src = "Cabinet.png" alt= "Files" width= "32" height = "32"/></button>
     <button class = "button2"><img src = "Desktop1.png" alt= "Desktop" width= "32" height = "32"/></button>
     <button class = "button2"><img src = "Mathematica.png" alt= "Mathematica" width= "32" height = "32"/></button>
     <button class = "button2"><img src = "Wolfram_Language.png" alt= "Wolfram" width= "32" height = "32"/></button></li>
-    <button width = "1px" height = "1px" style = "border: none; color: #FF0000;" class = "Easter1" onclick = "POONGFunc()"></button>
+    <button width = "1px" height = "1px" style = "border: none; color: #FF0000" class = "Easter1" onclick = "POONGFunc()"></button>
     <li id = "rightButtons"><button class = "button2"><img src = "Eject.png" alt= "Eject" width= "32" height = "32"/></button></li>
-    <li id = "rightButtons"><button id= "button3"></button></li>
-    <li id = "rightButtons"><button class= "volBtn" id= "button4" onclick = "sliderFunction()"><img src = "Volume.png" width = "30" height = "26" align = "center"/></button></li>
+    <li id = "rightButtons"><button id = "button3" style = "font-family: 'Roboto'"></button></li>
+    <li id = "rightButtons"><button class= "volBtn" id = "button4" onclick = "sliderFunction()"><img src = "Volume.png" width = "30" height = "26" align = "center"/></button></li>
 
   </div>
 
-<iframe id = "POONGGame" style = "border: 0; margin-left:-10px; margin-top: 2px; overflow: hidden; position: fixed;" width = "0" height = "773" src = "POONG.html"></iframe>
+  <iframe id = "POONGGame" style = "border: 0; margin-left:-10px; margin-top: 2px; overflow: hidden; position: fixed;" width = "0" height = "773" src = "POONG.html"></iframe>
 
 
-
+</body>
 
 
   <script>
-    
- var POONGFunc = () => {
+
+  var POONGFunc = () => {
     document.getElementById("POONGGame").setAttribute("width", "1590");
   }
+
+  /*var poong = document.getElementById("POONGGame").contentWindow;
+  poong.setAttribute("onLoad", "addHandle(document.getElementsByTagName('body').item(0), window)");*/
+
   /* When the user clicks on the button,
   toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -60,12 +68,25 @@ function myFunction() {
 
   <style>
 
+
+ *{
+    font-family: "Roboto";
+    /*src: url("Downloads/Roboto-Light.woff");*/
+
+  }
+
+
+  .slicer{
+    height: 1px;
+    color: #000;
+  }
   .break{
     border-top: 1px solid #DDD;
   }
 
   #button1{
     border-radius: 5px;
+    border-width: 10px;
   }
 
 
@@ -128,10 +149,11 @@ function myFunction() {
 
   body {
     background-color: #D6D3DE;
-    background-image: url("RaspberryPiLogo.png");
+    background-image: url("RaspbianUIBuild/RaspberryPiLogo.png");
     background-size: 500px 445px;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
   }
 
   #button4{
@@ -146,6 +168,7 @@ function myFunction() {
     font-size: 20px;
     border: none;
     background-color: #EDEBEC;
+    padding-bottom: 6px;
   }
 
     #rightButtons{
