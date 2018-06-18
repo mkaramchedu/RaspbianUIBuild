@@ -18,8 +18,8 @@
 </head>
 
 <div class = "connectBar" style= "width: 100%; margin-left: 0px;">
-  <img src = "Desktop1.png" width = "25" height = "25" style = "margin-left: 10px; margin-top: 1px;"/>
-  <span class = "name">Internet</span>
+  <img src = "RaspbianUIBuild/Desktop1.png" width = "25" height = "25" style = "margin-left: 10px; margin-top: 1px;"/>
+  <span class = "name" style = "font-family: 'Roboto'">Internet</span>
   <button id = "closeButton"><a class = "options" href = "RaspbianUIBuildNavbarTest.html" id = "close"><i class = "material-icons">clear</i></a></button>
   <button id = "closeButton"><a class = "options" href = "#"><i class = "material-icons" style = "color: white;">crop_din</i></a></button>
   <button id = "closeButton"><a class = "options" href = "#"><i class = "material-icons" style = "color: white; margin-top: 9px; margin-bottom: -8px;">remove</i></a></button>
@@ -51,43 +51,56 @@
     <!--<a id = "adding"><span id = "add">--><!--</span></a>-->
     <!--<button class = "tab"><span class = "tabText">New Tab</span>-->
 </div>
+
 <!--</div>-->
 
 <!--<iframe id = "iframe" src = "sites.google.com"></iframe>-->
 
 <div class = "searchBar">
-  <a href = "javascript:history.go(-1)" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_back_black_24px.svg"/></a>
-  <a href = "javascript:history.go(1)" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_forward_black_24px.svg"/></a>
-  <a href = "javascript:location.reload()" id = "leftArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_refresh_black_24px.svg"/></a>
-  <input id = "search"  style = "width: 1200px; vertical-align: center;" value = "https://www.google.com"/>
-  <a href = "#" id = "rightArrows"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_more_vert_black_24px.svg"/></a>
+  <a href = "javascript:history.go(-1)" class = "leftArrows" title = "Click to go back, hold to see history"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_back_black_24px.svg"/></a>
+  <a href = "javascript:history.go(1)" class = "leftArrows" title = "Click to go forward, hold to see history"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_arrow_forward_black_24px.svg"/></a>
+  <a href = "javascript:location.reload()" id = "refresh!" class = "leftArrows" title = "Reload this page"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_refresh_black_24px.svg"/></a>
+  <input id = "search"  style = "width: 1200px; vertical-align: center;" value = "https://www.google.com/webhp"/>
+  <a href = "#" id = "rightArrows" onclick = "customizeControl()" title = "Customize and control Google Chrome"><img src = "https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_more_vert_black_24px.svg"/></a>
 </div>
-<div class = "bookmarks">
+<!--<div id = "customControl">
+  <a>HI</a>
+</div>-->
+<div class = "bookmarks" style = "font-family: 'Arial';">
   <ul>
     <!--<li><button class="mdl-button mdl-js-button mdl-button-n-raised mdl-js-ripple-effect mdl-button--accent">Hey</button></li>-->
-    <button id = "Apps" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px; width: 20px;" src = "Apps.png"/> Apps</button>
+    <button id = "Apps" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px; width: 20px;" src = "Apps_Icon"/> Apps</button>
     <button id = "BRCMVideo" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 15px; padding-left: 0px;" src = "Youtube_Logo1.png"/> YouTube - Broadcom MASTERS 2017 Highlights</button>
     <button id = "FuturismBookmark" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px" src = "Futurism_Logo.jpg"/> Futurism</button>
     <button id = "CNNTech" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px;" src = "CNN_Logo.png"/> Tech News - CNN Tech</button>
     <button id = "AlanTuringWikipedia" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px;" src = "favicon.ico"/> Alan Turing - Wikipedia</button>
     <button id = "CodeFights" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px;" src = "codefights.svg"/> Practice Programming and Find Tech Jobs - CodeFights</button>
     <button id = "xkcdLink" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px;" src = "XKCD.png"/> Xkcd</button>
+    <!--<button id = "ARNOLDC" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px" src = "RaspbianUIBuild/d8500ddf.favicon.ico"/> ArnoldC</button>-->
+    <button id = "D4Google:)" class="mdl-button mdl-js-button mdl-js-ripple-effect bookmark"><img style = "height: 20px;" src = "IOS_Google_icon.png"/> Doodle 4 Google</button>
   </ul>
 </div>
 
 <div class = "page" id = "webpage">
   <div class = "quickAccess">
     <a id = "GoogleImages" href = "https://www.google.com/imghp?hl=en">Images</a>
-    <a><span class = "appDrop"> <i class = "material-icons" id = "appGrid">apps</i></span></a>
-    <i class = "notifyicon material-icons" id = "bellNotify">notifications</i>
-    <img src = "https://lh3.googleusercontent.com/-StMrQxuDJsg/AAAAAAAAAAI/AAAAAAAAAAA/ACLGyWD1YZL7E-fpVFYm_A38nvTIG9nQ6Q/s32-c-mo/photo.jpg" id = "profilePic" style = "border-radius: 50%;"/>
+    <a><span class = "appDrop"> <i class = "material-icons" id = "appGrid" title = "Google apps">apps</i></span></a>
+    <i class = "notifyicon material-icons" id = "bellNotify" title = "TREE(3) Google notifications">notifications</i>
+      <img class = "dropdown-toggle" data-toggle = "dropdown" title = "Google Account: Mithra Karamchedu
+(mithra.vamshik@gmail.com)" aria-expanded = "false" src = "https://lh3.googleusercontent.com/-StMrQxuDJsg/AAAAAAAAAAI/AAAAAAAAAAA/ACLGyWD1YZL7E-fpVFYm_A38nvTIG9nQ6Q/s32-c-mo/photo.jpg" id = "profilePic" style = "border-radius: 50%;"/>
+      <!--<ul class = "dropdown-menu">
+        <li>Hello</li>
+      </ul>-->
   </div>
   <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png" id = "GoogleLogo" height = "92" width = "272" class = "center"/>
   <!--<img src = "RaspbianUIBuild/GoogleMicrophone.png" id = "mic" width = "15px" height: "22.5px"/>-->
-  <input type = "text" placeholder = "Search Google or type URL" id = "middleSearch"/>
+  <div style = "padding-left: 16px; margin: auto; width: 664px;">
+    <input type = "text" placeholder = "Search Google or type URL" id = "middleSearch"/>
+    <img src = "RaspbianUIBuild/GoogleMicrophone.png" id ="MicImage" style = "top: 5px; position: relative;" aria-label = "Search by voice"/>
+  </div>
   <div class = "middlebuttons">
   <a id = "searchExec" href = ""><button class = "searchButton" width = "30px" height = "10px" id = "GoogleSearchButton"><strong>Google Search</strong></button></a>
-  <button class = "searchButton" width = "30px" height = "10px" id = "ImFeelingLucky">
+  <button class = "searchButton" width = "30px" height = "34px" id = "ImFeelingLucky">
     <!--Still working on this portion.-->
     <ul id = "Options"><strong>
       <li>I'm Feeling Stellar</li>
@@ -125,11 +138,29 @@
 
 
 <style>
+
+#MicImage{
+  position: relative;
+  float: right;
+  margin-top: -38px;
+  margin-right: 23px;
+  height: 23px;
+  width: 17px;
+}
+
+#MicImage:focus{
+  border-color: blue;
+}
+/*.mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent{
+  background-color: #F2F2F2;
+}*/
+
 .page{
   margin-top: -15px;
 }
 
 .bookmark{
+  font-family: 'Arial';
   width: auto;
   margin-top: -10px;
   background-color: #F2F2F2;
@@ -187,6 +218,7 @@ body{
 .theTabs{
   display: inline;
   /*border-radius: 3px*/
+  overflow: hidden;
 
 }
 .closeTab{
@@ -283,6 +315,8 @@ a:hover{
   width: 30px;
 }
 #appGrid:hover{
+  background-color: white;
+  text-decoration: none;
   color: #000;
 }
 /*.pageSearch{
@@ -414,23 +448,25 @@ a:hover{
    background-repeat: no-repeat;*/
    border:none;
    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
-   width: 664px;
+   width: 650px;
    height: 44px;
-   margin-top: 28px;
+   margin-top: 12px;
+   /*margin-top: 28px;
    margin-left: 28%;
-   margin-right: 35%;
+   margin-right: 35%;*/
    padding-left: 13px;
-   padding-right: 13px;
+   padding-right: 30px;
    font-size: 16px;
+   border-radius: 2px;
  }
 #GoogleLogo{
   padding-top: 112px;
-  margin-left: 40%;
-  margin-right: 40%;
+  margin-left: 41%;
+  margin-right: 41%;
 }
 .tabText{
   margin-left: -70px;
-  transform: perspective(-100px);
+  transform: skewX(-40deg);
   /*-webkit-transform: skew(-20deg);*/
 }
 .tab {
@@ -497,7 +533,7 @@ a:hover{
   margin-right: 5px;
   float: right;
 }
-#leftArrows{
+.leftArrows{
   border-radius: 5px;
   margin-right: 5px;
   margin-left: 10px;
@@ -516,7 +552,7 @@ a:hover{
 }
 #leftArrows:hover{
   background-color: #D5D5D5;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
   #reload:hover{
@@ -536,11 +572,9 @@ a:hover{
 
 <script>
 
-/*if($("tabBar").size() > 7){
-  $("theTabs").width = (window.innerWidth - 20)/$("tabBar").size();
-}*/
-
-//document.getELementById("using").zIndex = 5;
+function customizeControl(){
+  document.getElementById("customControl").classList.toggle("show");
+}
 
 var searchBar = document.getElementById("search");
 searchBar.addEventListener("keydown", e => {
@@ -561,12 +595,14 @@ searchBar.addEventListener("keydown", e => {
 
 var webpage = document.getElementById("webpage");
 document.getElementById('BRCMVideo').addEventListener("click", () => {
-  webpage.innerHTML = '<iframe id = width="1585" height="588" src="https://www.youtube.com/embed/NkFwi4afwQE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><h4 font-family = "Courier">Created by Mithra Karamchedu (by that, I mean the simulation)</h1>';
+  webpage.innerHTML = '<iframe id = "websiteContent" width="1585" height="588" src="https://www.youtube.com/embed/NkFwi4afwQE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><h4 font-family = "Courier">Created by Mithra Karamchedu (by that, I mean the simulation)</h1>';
+  document.getElementById("refresh!").href = "javascript: document.getElementById('websiteContent').contentWindow.location.reload()";
 });
 
 document.getElementById("FuturismBookmark").addEventListener("click", () => {
   webpage.innerHTML = '<iframe width="1585" height = "645" src="https://futurism.com/"></iframe>';
   searchBar.value = "https://www.futurism.com";
+  document.getElementById("refresh!").href = "javascript: document.getElementById('websiteContent').contentWindow.location.reload()";
 });
 
 document.getElementById("AlanTuringWikipedia").addEventListener("click", () => {
@@ -583,6 +619,10 @@ document.getElementById("xkcdLink").addEventListener("click", () => {
   webpage.innerHTML = '<iframe width="1585" height="645" src="https://xkcd.com"></iframe>';
   searchBar.value = "https://www.xkcd.com";
 });
+
+/*document.getElementById("ARNOLDC").addEventListener("click", () => {
+  webpage.innerHTML = '<iframe width="1585" height="645" src=""'
+});*/
 //document.getElementById("theTabs").innerHTML = "New Tab";
 /*if($("tabBar").size() > 7){
   $("theTabs").width = (window.innerWidth - 20)/$("tabBar").size();
@@ -592,11 +632,69 @@ document.getElementById("xkcdLink").addEventListener("click", () => {
 
 $(".addTab").on("click", () => {
   //document.write("HI!");
-    $(".tabBar").prepend("<li class = 'theTabs'><button id = 'other' class = 'tab'><span class = 'tabText'>New Tab</span></button></li>");
+    $(".tabBar").prepend("<li class = 'theTabs' style = 'z-index: -1'><button id = 'other' class = 'tab'><span class = 'tabText'>New Tab</span></button></li>");
 });
 
 
+/*$("ImFeelingLucky").hover(function(){
+  btnTimeID = setTimeout(() => {
+    let loc = -(Math.ceil(Math.random()11+1)*5-3)*5;
+    document.getElementById("ImFeelingLucky").innerHTML = loc;
+    if (loc = -135){
+      loc = -35;
+    }
+    $("ImFeelingLucky").animate({ bottom: loc + "px"}, 300);
+    if (loc === -110 || loc === -35 || loc === -160 || loc === -10 || loc === -185 || loc === -60){
+      $("ImFeelingLucky").css('width', '149px');
+    }
+});
+});*/
 
+//
+
+/*$("#ImFeelingLucky").hover(
+  function() {
+    btnTimeID = setTimeout(function() {
+      // We are using the math object to randomly pick a number between 1 - 11, and then applying the formula (5n-3)5 to this number, which leaves us with a randomly selected number that is applied to the <ul> (i.e. -185) and corresponds to the position of a word (or <li> element, i.e. "I'm Feeling Curious").
+      var pos = -(Math.floor(Math.random() * 11 + 1) * 5 - 3) * 5;
+
+      if (pos === -135) {
+        console.log("position didn't change, let's force change");
+        pos = -35;
+      }
+
+      $("#Options").animate(
+        { bottom: pos + "px" },
+        300
+      );
+
+      // Change the width of the button to fit the currently selected word.
+      if (pos === -35 || pos === -60 || pos === -110 || pos === -160 || pos === -185 || pos === -10) {
+        console.log(pos + " = -35, -110, -185, -10, -60, -160");
+        $("#ImFeelingLucky").css("width", "150px");
+      } else if (pos === -85) {
+        console.log(pos + " = -85");
+        $("#ImFeelingLucky").css("width", "161px");
+      } else if (pos === -210) {
+        console.log(pos + " = -210");
+        $("#ImFeelingLucky").css("width", "165px");
+      } else {
+        console.log(pos + " = -260, -235");
+        $("#ImFeelingLucky").css("width", "143px");
+      }
+    }, 200);
+  },
+  function() {
+    clearTimeout(btnTimeID);
+
+    setTimeout(function() {
+      console.log("setTimeout function");
+      $("#Options").css("bottom", "-135px"); // this is the original position
+      $("#ImFeelingLucky").css("width", "144px"); // reset the original width of the button
+    }, 200);
+  }
+);
+*/
 
 /*var refresh = document.getElementById("reload");
 refresh.addEventListener("click", () => {
@@ -641,26 +739,16 @@ middleSearch.addEventListener("keydown", e => {
     var searchQuery = "https://www.google.com/search?q=" + middleSearch.value;
     //document.getElementById("middleLink").setAttribute("href", "https://www.google.com/search?q=" + middleSearch.value);
     window.location = `https://www.google.com/search?q=${middleSearch.value}`;
-    //webpage.innerHTML = '<iframe src = ' + searchQuery + '></iframe>';
+    //webpage.innerHTML = '<iframe src = "https://www.bing.com/search?q="' + middleSearch.value  + '></iframe>';
   }
 });
 var search = document.getElementById("search");
 search.addEventListener("keydown", e => {
   if (e.keycode === 13){
       window.location = "http://" + middleSearch.value;
+
   }
 });
-
-
-</script>
-
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-$(document).ready(() => {
-  /*$('#add').on('click', () => {
-    $('#tabList').append("<button class = 'tab'><span class = 'tabText'>New Tab</span></button>");
-  });*/
-
-
 
 
 </script>
