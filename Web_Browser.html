@@ -1,10 +1,20 @@
 <head>
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!--<link rel = "stylesheet" href = "https://fonts.googleapis/com/icon?family=Material+Icons">-->
+  <!--jQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+  <!--Bootstrap-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--MDL-->
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script type = "text/javascript" href = "dragiframe.js"></script>
+  <link href = "https://fonts.googleapis.com/css?family=Roboto:100" rel = "stylesheet">
+
 </head>
 
 <div class = "connectBar" style= "width: 100%; margin-left: 0px;">
@@ -20,12 +30,12 @@
   <ul class = "tabBar">
     <!--<ul class = "tabList">-->
   <!--<span id = "tabList">-->
-    <li class = "theTabs"><button id = "using" class = "tab"><span class = "tabText" style = "">New Tab</span><a class = "closeTab"><i class = "material-icons">close</i></a></span></button></li>
+    <li class = "theTabs" style = "z-index: 4"><button id = "using" class = "tab"><span class = "tabText" style = ""><img id = "faviconTab" height = "16x" width = "16px" style = "transform: skewX(14deg); border: 0;"/> New Tab</span><a class = "closeTab"><i class = "material-icons">close</i></a></span></button></li>
+    <!--<li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
     <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
     <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
-    <li class = "theTabs"><button id = "other" class = "tab"><span class = "tabText">New Tab</span></button></li>
-    <li class = "theTabs"><button id = "other" class = "tab"><span class = "new">New Tab</span></button></li>
-    <button style = "display: inline-flex" id = "addTab" class = "addTab"></button>
+    <li class = "theTabs"><button id = "other" class = "tab"><span class = "new">New Tab</span></button></li>-->
+    <button style = "display: inline-flex" id = "addTab" class = "addTab" title = "New tab"></button>
 
   </ul>
 
@@ -41,7 +51,6 @@
     <!--<a id = "adding"><span id = "add">--><!--</span></a>-->
     <!--<button class = "tab"><span class = "tabText">New Tab</span>-->
 </div>
-
 <!--</div>-->
 
 <!--<iframe id = "iframe" src = "sites.google.com"></iframe>-->
@@ -536,8 +545,16 @@ a:hover{
 var searchBar = document.getElementById("search");
 searchBar.addEventListener("keydown", e => {
   if(e.keyCode === 13){
+    /*if (searchBar.value === "HI"){
+      webpage.innerHTML = '<h1 id = "HELLO!" style = "height: 2000px;">HELLO</h1>';
+    }*/
   if(searchBar.value !== "https://www.google.com"){
-    webpage.innerHTML = '<iframe src=' + searchBar.value + ' width="1585" height="645"></iframe>';
+    webpage.innerHTML = '<iframe id = "websiteContent" src=' + searchBar.value + ' width="1585" height="645"></iframe>';
+    document.getElementById("refresh!").href = "javascript: document.getElementById('websiteContent').contentWindow.location.reload()";
+    document.getElementById("faviconTab").src = "http://s2.googleusercontent.com/s2/favicons?domain_url=" + searchBar.value;
+    //document.getElementById("refresh!").setAttribute("href", history.go(1));
+  } else if (searchBar.value === "https://www.google.com" || searchBar.value === "https://www.google.com/webhp"){
+    history.go(0);
   }
   }
 });
