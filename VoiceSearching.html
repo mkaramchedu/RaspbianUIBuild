@@ -1,0 +1,64 @@
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <h1 id = "saidOutput" style = "vertical-align: center; font-weight: 20; font-family: Arial;  margin-top: 20%; margin-left: 29%;"></h1>
+  <button onclick = "scribeToScreen();" style = "height: 243; width: 243; margin-left: 64%; margin-top: -134px; border-radius: 50%; border-color: #EEE 1px solid; background-color: white; "><i class="material-icons" style = "font-size: 154px; color: red;">mic</i></button>
+</body>
+
+<script>
+  /*var whatWasSaid = document.getElementById("usersSpeech");
+  var speechToTextConversion = function(){
+    if ("webkitSpeechRecognition" in window){
+      var speechRecognizer = new webkitSpeechRecognition();
+      speechRecognizer.lang = "en-US";
+      speechRecognizer.continuous = true;
+      speechRecognizer.interimResults = false;
+      speechRecognizer.start();
+
+      var scribed = " ";
+      speechRecognizer.onresult = e => {
+        for (var i = e.resultIndex; i < e.results.length; i++){
+          let nextTyped = e.results[i][0].transcript;
+          transcript.replace("\n", "<br>");
+          if (e.results[i].isFinal){
+            scribed += nextTyped;
+          }
+        }
+        whatWasSaid.innerHTML = scribed;
+      }
+    }
+  }*/
+  var r = document.getElementById("saidOutput");
+  r.innerHTML = "Hey! :)";
+
+  function scribeToScreen () {
+    if('webkitSpeechRecognition' in window){
+
+      var speechRecognizer = new webkitSpeechRecognition();
+      speechRecognizer.continuous = true;
+      speechRecognizer.interimResults = true;
+      speechRecognizer.lang = 'en-US';
+      speechRecognizer.start();
+
+      var vocalized = '';
+      speechRecognizer.onresult = e => {
+        var interimTranscripts = '';
+        for(var i = e.resultIndex; i < e.results.length; i++){
+          var transcript = e.results[i][0].transcript;
+          transcript.replace("\n", "<br>");
+          if(e.results[i].isFinal){
+            vocalized += transcript;
+          }else{
+            interimTranscripts += transcript;
+          }
+        }
+        r.innerHTML = vocalized + '<span style="color:#999">' + interimTranscripts + '</span>';
+      };
+      speechRecognizer.onerror = () => {
+      };
+    }else{
+      r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
+    }
+  }
+</script>
