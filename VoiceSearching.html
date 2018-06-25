@@ -7,29 +7,9 @@
 </body>
 
 <script>
-  /*var whatWasSaid = document.getElementById("usersSpeech");
-  var speechToTextConversion = function(){
-    if ("webkitSpeechRecognition" in window){
-      var speechRecognizer = new webkitSpeechRecognition();
-      speechRecognizer.lang = "en-US";
-      speechRecognizer.continuous = true;
-      speechRecognizer.interimResults = false;
-      speechRecognizer.start();
-
-      var scribed = " ";
-      speechRecognizer.onresult = e => {
-        for (var i = e.resultIndex; i < e.results.length; i++){
-          let nextTyped = e.results[i][0].transcript;
-          transcript.replace("\n", "<br>");
-          if (e.results[i].isFinal){
-            scribed += nextTyped;
-          }
-        }
-        whatWasSaid.innerHTML = scribed;
-      }
-    }
-  }*/
-  var r = document.getElementById("saidOutput");
+  
+  
+ var r = document.getElementById("saidOutput");
   r.innerHTML = "Hey! :)";
 
   function scribeToScreen () {
@@ -55,10 +35,15 @@
         }
         r.innerHTML = vocalized + '<span style="color:#999">' + interimTranscripts + '</span>';
       };
+
+      speechRecognizer.onspeechend = () => {
+        window.location = "https://www.google.com/search?q=" + vocalized;
+      }
+      
       speechRecognizer.onerror = () => {
       };
     }else{
-      r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
+      r.innerHTML = `If you're seeing this message, you could try changing your current browser.`
     }
   }
 </script>
