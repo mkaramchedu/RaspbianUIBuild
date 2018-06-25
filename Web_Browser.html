@@ -96,7 +96,7 @@
   <!--<img src = "RaspbianUIBuild/GoogleMicrophone.png" id = "mic" width = "15px" height: "22.5px"/>-->
   <div style = "padding-left: 16px; margin: auto; width: 664px;">
     <input type = "text" placeholder = "Search Google or type URL" id = "middleSearch"/>
-    <a href = "VoiceSearching.html"><img src = "GoogleMicrophone.png" id ="MicImage" style = "top: 5px; position: relative;" aria-label = "Search by voice"/></a>
+    <img src = "GoogleMicrophone.png" id ="MicImage" style = "top: 5px; position: relative;" aria-label = "Search by voice"/>
   </div>
   <div class = "middlebuttons">
   <a id = "searchExec" href = ""><button class = "searchButton" width = "30px" height = "10px" id = "GoogleSearchButton"><strong>Google Search</strong></button></a>
@@ -571,6 +571,11 @@ a:hover{
 </style>
 
 <script>
+ 
+$("#MicImage").on("click", () => {
+  $("#MH").remove();
+  webpage.innerHTML = "<iframe id = 'websiteContent' src = 'VoiceSearching.html' width = '1585' height = '645'></iframe>";
+});
 
 function customizeControl(){
   document.getElementById("customControl").classList.toggle("show");
