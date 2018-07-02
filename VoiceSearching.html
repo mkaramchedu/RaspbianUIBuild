@@ -37,7 +37,7 @@
       };
 
       speechRecognizer.onspeechend = () => {
-        window.location = "https://www.google.com/search?q=" + vocalized;
+        window.parent.location = "https://www.google.com/search?q=" + vocalized;
       }
       
       speechRecognizer.onerror = () => {
