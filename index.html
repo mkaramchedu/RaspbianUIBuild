@@ -30,7 +30,7 @@
   </div>
 
   <iframe id = "POONGGame" style = "border: 0; margin-left:-10px; margin-top: 2px; overflow: hidden; position: fixed;" width = "0" height = "773" src = "POONG.html"></iframe>
-
+  <iframe id = "HumanTesteriFrame" style = "border: 0; overflow: hidden; margin-left: 10px; margin-top: 6px; position: fixed;" onclick = "" src = "AreYouAHuman%3F.html" scrolling = "no" height = "420" width = "343px"></iframe>
 
 </body>
 
@@ -38,6 +38,7 @@
   <script>
 
   var POONGFunc = () => {
+    document.getElementById("HumanTesteriFrame").setAttribute("src", "");
     document.getElementById("POONGGame").setAttribute("width", "1590");
   }
 
