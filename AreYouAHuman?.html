@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href = "https://fonts.googleapis.com/css?family=Roboto:300" rel = "stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+  <script src="tracking-min.js"></script>
+  <script src="face-min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
+</head>
+
+<style>
+
+.optionSize{
+  float: right;
+  color: white;
+  border: solid;
+  border-color: #6C8DB3;
+  border-width: 1px;
+  margin-right: 3px;
+  border-width: thin;
+  margin-top: 2px;
+  padding-right: -5px;
+}
+canvas {
+  margin-left: -320px;
+  margin-top: 0px;
+  position: absolute;
+}
+</style>
+
+
+<body>
+    <div class = "blueeey" style = "background-color: #84ABD6; width: 320px; height: 30px; margin: 0;">
+      <i class = "material-icons">accessibility_new</i>
+      <span style = "font-family: Roboto;">HUMAN?</span>
+      <a onclick = "javascript: document.body.height = 0;"><i class = "material-icons optionSize">close</i></a>
+    </div>
+    <div class="demo-container">
+      <canvas style = "z-index: -1; background-color: pink; width: 320px; height: 240px; margin-left: 0px;"></canvas>
+      <video id="faceFinding" width="320" height="240" preload autoplay loop muted></video>
+      <canvas id="drawingAroundHere" width="320" height="240"></canvas>
+    </div>
+    <div style ="width: 320px; background-color: #2D91D0; margin-top: -24px; font-family: News Cycle;">
+      <h2 id = "whetherYoureHuman">Once your webcam is turned on, I can tell you if you're human.</h2>
+      <h5>Try moving a little bit or adjusting the lighting to see a box appearing around your general face area.</h5>
+
+    </div>
+</body>
+
+  <script>
+
+  window.onload = () => {
+    const drawingAroundHere = document.getElementById("drawingAroundHere");
+    const context = drawingAroundHere.getContext('2d');
+    let faceFinding = document.getElementById("faceFinding");
+    let trackingObject = new tracking.ObjectTracker("face");
+    trackingObject.setEdgesDensity(0.1);
+    trackingObject.setInitialScale(4);
+    trackingObject.setStepSize(2);
+    tracking.track("#faceFinding", trackingObject, {camera: true});
+    trackingObject.on("track", event => {
+    context.clearRect(0, 0, drawingAroundHere.width, drawingAroundHere.height);
+    event.data.forEach(rect => {
+      console.log("You might be a member of HOMO SAPIENS.");
+      document.getElementById("whetherYoureHuman").innerHTML = "You could theoretically be a human.";
+      context.strokeStyle = "red";
+      context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+      context.font = "11px Courier";
+      context.fillStyle = "rgb(255, 255, 255)";
+      context.fillText("x: " + rect.x + "px", rect.x + rect.width + 5, rect.y + 11);
+      context.fillText("y: " + rect.y + "px", rect.x + rect.width + 5, rect.y + 11);
+    });
+    });
+  }
+
+    /*window.onload = function() {
+      const video = document.getElementById('faceFinding');
+      var canvas = document.getElementById('drawingAroundHere');
+      var context = canvas.getContext('2d');
+      var tracker = new tracking.ObjectTracker('face');
+      tracker.setInitialScale(4);
+      tracker.setStepSize(2);
+      tracker.setEdgesDensity(0.1);
+      tracking.track('#faceFinding', tracker, { camera: true });
+      tracker.on('track', function(event) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        event.data.forEach(function(rect) {
+          context.strokeStyle = '#a64ceb';
+          context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+          context.font = '11px Helvetica';
+          context.fillStyle = "#fff";
+          context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+          context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+        });
+      });
+      var gui = new dat.GUI();
+      gui.add(tracker, 'edgesDensity', 0.1, 0.5).step(0.01);
+      gui.add(tracker, 'initialScale', 1.0, 10.0).step(0.1);
+      gui.add(tracker, 'stepSize', 1, 5).step(0.1);
+    };*/
+  </script>
+
+</body>
+</html>
